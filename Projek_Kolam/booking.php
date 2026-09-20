@@ -91,7 +91,7 @@
     <form action="proses-booking.php" method="POST">
         <div class="form-group">
             <label for="nama">Nama Lengkap</label>
-            <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" required>
+            <input type="text" id="nama" name="nama" placeholder="Contoh: Awan Setiawan" required>
         </div>
 
         <div class="form-group">
