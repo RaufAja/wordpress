@@ -29,19 +29,26 @@ if (isset($_POST['konfirmasi_bayar'])) {
 
     <form method="POST">
         <div class="form-group">
-            <label>Metode Pembayaran Digital:</label>
-            <div style="margin-top: 0.5rem;">
-                <label style="font-weight: normal; display: block; margin-bottom: 8px;">
-                    <input type="radio" name="metode" value="qris" checked> <strong>QRIS</strong> (GoPay, OVO, Dana, LinkAja, ShopeePay)
-                </label>
-                <label style="font-weight: normal; display: block; margin-bottom: 8px;">
-                    <input type="radio" name="metode" value="bca"> <strong>Virtual Account BCA</strong>
-                </label>
-                <label style="font-weight: normal; display: block; margin-bottom: 8px;">
-                    <input type="radio" name="metode" value="mandiri"> <strong>Virtual Account Mandiri</strong>
-                </label>
-            </div>
-        </div>
+    <label style="margin-bottom: 0.8rem; display: block;">Metode Pembayaran Digital:</label>
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        
+        <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal; cursor: pointer;">
+            <input type="radio" name="metode" value="qris" checked style="width: auto; margin: 0;">
+            <span><strong>QRIS</strong> (GoPay, OVO, Dana, LinkAja, ShopeePay)</span>
+        </label>
+
+        <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal; cursor: pointer;">
+            <input type="radio" name="metode" value="bca" style="width: auto; margin: 0;">
+            <span><strong>Virtual Account BCA</strong></span>
+        </label>
+
+        <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal; cursor: pointer;">
+            <input type="radio" name="metode" value="mandiri" style="width: auto; margin: 0;">
+            <span><strong>Virtual Account Mandiri</strong></span>
+        </label>
+
+    </div>
+</div>
 
         <div style="background: #f1f5f9; padding: 1rem; border-radius: 8px; text-align: center; margin: 1.5rem 0;">
             <p style="margin: 0 0 10px 0; font-size: 0.9rem; color: #475569;">Scan QRIS di bawah ini untuk membayar:</p>
