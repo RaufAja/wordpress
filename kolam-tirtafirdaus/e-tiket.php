@@ -22,7 +22,7 @@ $tiket = $result->fetch_assoc();
         <p><strong>Nama Pemesan:</strong> <?php echo $tiket['nama_pemesan']; ?></p>
         <p><strong>Tanggal Kunjungan:</strong> <?php echo date('d-m-Y', strtotime($tiket['tgl_kunjungan'])); ?></p>
         <p><strong>Rincian:</strong> <?php echo $tiket['jumlah_dewasa']; ?> Dewasa, <?php echo $tiket['jumlah_anak']; ?> Anak</p>
-        <p><strong>Total Bayar:</strong> Rp <?php echo number_number_format($tiket['total_bayar'], 0, ',', '.'); ?></p>
+        <p><strong>Total Bayar:</strong> Rp <?php echo number_format($tiket['total_bayar'], 0, ',', '.'); ?></p>
         <p><strong>Status:</strong> <span style="color: green; font-weight: bold;"><?php echo strtoupper($tiket['status_pembayaran']); ?></span></p>
         
         <div style="text-align: center; margin-top: 1.5rem;">
