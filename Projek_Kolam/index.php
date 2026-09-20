@@ -15,10 +15,7 @@
 
         <nav>
         <a href="index.php">Beranda</a>
-        <a href="#harga">Harga Tiket</a>
-        <a href="#fasilitas">Fasilitas</a>
         <a href="#galeri">Galeri</a>
-        <a href="#kontak">Kontak</a>
         <a href="booking.php" class="btn">Pesan Tiket Sekarang</a>
         </nav>
     </header>
