@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="galeri-item">
-                <img src="assets/kolam2.png" alt="Kolam Anak">
+                <img src="assets/kolam2.jpg" alt="Kolam Anak">
                 <div class="galeri-caption">Area Kolam Anak</div>
                 </div>
 
@@ -128,7 +128,7 @@
 
     <footer>
         <h3>Tirta Firdaus</h3>
-        <p>Kolam Renang Tirta Firdaus</p>
+        <p>Manggahang, Kec. Baleendah, Kabupaten Bandung, Jawa Barat 40288 </p>
         <p>&copy; 2026 Tirta Firdaus</p>
     </footer>
 
