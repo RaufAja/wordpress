@@ -97,6 +97,29 @@
 
     </section>
 
+    <!-- Section Galeri -->
+    <section id="galeri" class="section">
+        <h2>Galeri Kolam Renang</h2>
+        <p>Lihat suasana dan fasilitas yang ada di Tirta Firdaus.</p>
+    
+        <div class="galeri-container">
+            <div class="galeri-item">
+                <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=500&q=80" alt="Kolam Renang Utama">
+                <div class="galeri-caption">Kolam Renang Utama</div>
+                </div>
+
+                <div class="galeri-item">
+                <img src="https://images.unsplash.com/photo-1560090995-019306b3a0df?auto=format&fit=crop&w=500&q=80" alt="Kolam Anak">
+                <div class="galeri-caption">Area Kolam Anak</div>
+                </div>
+
+                <div class="galeri-item">
+                <img src="https://images.unsplash.com/photo-1582650625119-3a31f8418b0d?auto=format&fit=crop&w=500&q=80" alt="Pemandangan Depan">
+                <div class="galeri-caption">Area Bersantai</div>
+            </div>
+        </div>
+    </section>
+
 
     <footer>
         <h3>Tirta Firdaus</h3>
