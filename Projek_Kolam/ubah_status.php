@@ -1,13 +1,12 @@
 <?php
-
-include "koneksi.php";
+require_once "config/database.php";
 
 if (isset($_GET['id'])) {
+    $id = mysqli_real_escape_string($conn, $_GET['id']);
 
-    $id = $_GET['id'];
-
-    $query = "SELECT * FROM booking WHERE id_booking = '$id'";
-    $result = mysqli_query($koneksi, $query);
+    // Mengambil data dari tabel tiket_pesanan milik kita
+    $query = "SELECT * FROM tiket_pesanan WHERE id = '$id'";
+    $result = mysqli_query($conn, $query);
 
     $data = mysqli_fetch_assoc($result);
 
@@ -15,12 +14,19 @@ if (isset($_GET['id'])) {
         die("Data booking tidak ditemukan.");
     }
 
+    $status_baru = ($data['status_pembayaran'] === 'pending') ? 'lunas' : 'pending';
+    
+    $update = "UPDATE tiket_pesanan SET status_pembayaran = '$status_baru' WHERE id = '$id'";
+    if (mysqli_query($conn, $update)) {
+        header("Location: admin.php");
+        exit;
+    } else {
+        echo "Gagal mengubah status: " . mysqli_error($conn);
+    }
+
 } else {
-
     die("ID booking tidak ditemukan.");
-
 }
-
 ?>
 
 <!DOCTYPE html>

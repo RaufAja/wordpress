@@ -1,6 +1,5 @@
 <?php
-
-include "koneksi.php";
+require_once 'config/database.php';
 
 $query = "SELECT * FROM booking ORDER BY id_booking DESC";
 $result = mysqli_query($koneksi, $query);
