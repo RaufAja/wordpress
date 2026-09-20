@@ -101,6 +101,11 @@
     </section>
 
 
-<?php 
-    include 'includes/footer.php'; 
-?>
+    <footer>
+        <h3>Tirta Firdaus</h3>
+        <p>Kolam Renang Tirta Firdaus</p>
+        <p>&copy; 2026 Tirta Firdaus</p>
+    </footer>
+
+</body>
+</html>
