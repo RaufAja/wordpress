@@ -69,7 +69,8 @@ nav a:hover {
     text-align: center;
 }
 
-.features, .card-container, .cards {
+/* Tambahkan .fitur-container di bagian paling depan */
+.fitur-container, .cards {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -77,12 +78,13 @@ nav a:hover {
     flex-wrap: wrap;
 }
 
-.feature-card, .card {
+.card {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     width: 250px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-sizing: border-box;
 }
 
 footer {
