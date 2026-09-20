@@ -1,30 +1,6 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tirta Firdaus - Kolam Renang</title>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <header>
-        <div class="logo">
-            Tirta Firdaus
-        </div>
-
-        <nav>
-            <a href="index.php">Beranda</a>
-            <a href="#">Harga Tiket</a>
-            <a href="#">Fasilitas</a>
-            <a href="#">Galeri</a>
-            <a href="#">Kontak</a>
-            <a href="#">Booking</a>
-        </nav>
-    </header>
-
+<?php 
+    include 'includes/header.php'; 
+?>
 
     <section class="hero">
 
@@ -104,19 +80,6 @@
     </section>
 
 
-    <footer>
-
-        <h3>Tirta Firdaus</h3>
-
-        <p>
-            Kolam Renang Tirta Firdaus
-        </p>
-
-        <p>
-            © 2026 Tirta Firdaus
-        </p>
-
-    </footer>
-
-</body>
-</html>
+<?php 
+    include 'includes/footer.php'; 
+?>
