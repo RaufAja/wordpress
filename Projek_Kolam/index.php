@@ -42,9 +42,7 @@
                 bersama keluarga di Tirta Firdaus.
             </p>
 
-            <a href="#" class="btn">
-                Booking Tiket
-            </a>
+            <a href="booking.php" class="btn">Pesan Tiket Sekarang</a>
 
         </div>
 

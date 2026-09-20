@@ -1,142 +1,43 @@
-<?php
-include "koneksi.php";
-?>
+<?php include 'includes/header.php'; ?>
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+    <h2>Form Pemesanan Tiket</h2>
+    <form action="proses-booking.php" method="POST">
+        <div class="form-group">
+            <label>Nama Lengkap</label>
+            <input type="text" name="nama_pemesan" required placeholder="Contoh: Budi Santoso">
+        </div>
 
-    <title>Booking Tiket - Tirta Firdaus</title>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
-    <div class="logo">
-        Tirta Firdaus
-    </div>
-
-    <nav>
-        <a href="index.php">Beranda</a>
-        <a href="#">Harga Tiket</a>
-        <a href="#">Fasilitas</a>
-        <a href="#">Galeri</a>
-        <a href="booking.php">Booking</a>
-    </nav>
-</header>
-
-
-<section class="booking-page">
-
-    <div class="booking-container">
-
-        <p class="label">PEMESANAN TIKET</p>
-
-        <h1>Booking Tiket</h1>
-
-        <p class="booking-info">
-            Silakan isi data di bawah ini untuk melakukan
-            pemesanan tiket Kolam Renang Tirta Firdaus.
-        </p>
-
-
-        <form action="proses_booking.php" method="POST">
-
+        <div class="grid-2">
             <div class="form-group">
-                <label>Nama Lengkap</label>
-
-                <input
-                    type="text"
-                    name="nama"
-                    placeholder="Masukkan nama lengkap"
-                    required
-                >
+                <label>Email</label>
+                <input type="email" name="email" required placeholder="nama@email.com">
             </div>
-
-
             <div class="form-group">
-                <label>No. HP</label>
-
-                <input
-                    type="text"
-                    name="no_hp"
-                    placeholder="Masukkan nomor HP"
-                    required
-                >
+                <label>Nomor WhatsApp / HP</label>
+                <input type="tel" name="no_hp" required placeholder="08123456789">
             </div>
+        </div>
 
+        <div class="form-group">
+            <label>Tanggal Kunjungan</label>
+            <input type="date" name="tgl_kunjungan" min="<?php echo date('Y-m-d'); ?>" required>
+        </div>
 
+        <div class="grid-2">
             <div class="form-group">
-                <label>Tanggal Booking</label>
-
-                <input
-                    type="date"
-                    name="tanggal_booking"
-                    required
-                >
+                <label>Jumlah Dewasa (Rp 25.000 / orang)</label>
+                <input type="number" name="jumlah_dewasa" min="0" value="1" required>
             </div>
-
-
             <div class="form-group">
-                <label>Jenis Tiket</label>
-
-                <select name="jenis_tiket" required>
-
-                    <option value="">-- Pilih Tiket --</option>
-
-                    <option value="Dewasa">
-                        Tiket Dewasa
-                    </option>
-
-                    <option value="Anak-anak">
-                        Tiket Anak-anak
-                    </option>
-
-                </select>
+                <label>Jumlah Anak-Anak (Rp 15.000 / orang)</label>
+                <input type="number" name="jumlah_anak" min="0" value="0" required>
             </div>
+        </div>
 
-
-            <div class="form-group">
-                <label>Jumlah Tiket</label>
-
-                <input
-                    type="number"
-                    name="jumlah_tiket"
-                    min="1"
-                    placeholder="Masukkan jumlah tiket"
-                    required
-                >
-            </div>
-
-
-            <button type="submit" class="btn-booking">
-                Booking Sekarang
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-
-<footer>
-
-    <h3>Tirta Firdaus</h3>
-
-    <p>
-        Kolam Renang Tirta Firdaus
-    </p>
-
-    <p>
-        © 2026 Tirta Firdaus
-    </p>
-
-</footer>
+        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Lanjut ke Pembayaran</button>
+    </form>
+</div>
 
 </body>
 </html>
