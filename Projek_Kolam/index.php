@@ -1,6 +1,27 @@
-<?php 
-    include 'includes/header.php'; 
-?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirta Firdaus - Kolam Renang</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            Tirta Firdaus
+        </div>
+
+        <nav>
+        <a href="index.php">Beranda</a>
+        <a href="#harga">Harga Tiket</a>
+        <a href="#fasilitas">Fasilitas</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#kontak">Kontak</a>
+        <a href="booking.php" class="btn">Pesan Tiket Sekarang</a>
+        </nav>
+    </header>
 
     <section class="hero">
 
