@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="galeri-item">
-                <img src="https://images.unsplash.com/photo-1560090995-019306b3a0df?auto=format&fit=crop&w=500&q=80" alt="Kolam Anak">
+                <img src="assets/kolam2.png" alt="Kolam Anak">
                 <div class="galeri-caption">Area Kolam Anak</div>
                 </div>
 
