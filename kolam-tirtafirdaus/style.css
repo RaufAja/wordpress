@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 119, 182, 0.9),
+            rgba(0, 180, 216, 0.8)
+        ),
+        url("https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+
+/* Efek lapisan transparan */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent,
+            rgba(0, 50, 90, 0.35)
+        );
+
+    pointer-events: none;
+}
+
+
+/* Container */
+
+.welcome-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+
+/* Card */
+
+.welcome-card {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 650px;
+
+    padding: 60px 50px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 40, 80, 0.25);
+
+    animation: muncul 0.8s ease;
+}
+
+
+/* Icon */
+
+.pool-icon {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 25px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    font-size: 38px;
+}
+
+
+/* Tulisan selamat datang */
+
+.welcome-text {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    color: #b9f2ff;
+
+    margin-bottom: 15px;
+}
+
+
+/* Judul */
+
+h1 {
+    font-size: clamp(35px, 6vw, 55px);
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+h1 span {
+    display: block;
+
+    color: #b9f2ff;
+}
+
+
+/* Deskripsi */
+
+.description {
+    max-width: 500px;
+
+    margin: 0 auto 35px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* Tombol */
+
+.dashboard-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    min-width: 220px;
+
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    background: white;
+
+    color: #0077b6;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s;
+}
+
+.dashboard-button span {
+    font-size: 20px;
+
+    transition: 0.3s;
+}
+
+.dashboard-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* Animasi */
+
+@keyframes muncul {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* HP */
+
+@media (max-width: 600px) {
+
+    .welcome-card {
+        padding: 45px 25px;
+
+        border-radius: 25px;
+    }
+
+    .pool-icon {
+        width: 65px;
+        height: 65px;
+
+        font-size: 30px;
+    }
+
+    .welcome-text {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .dashboard-button {
+        width: 100%;
+    }
+
+}
