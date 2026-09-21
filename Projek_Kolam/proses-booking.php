@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Simpan ke Database
     $query = "INSERT INTO tiket_pesanan 
-              (kode_booking, nama_pemesan, email, no_hp, tanggal_kunjungan, jumlah_dewasa, jumlah_anak, total_harga, status_pembayaran) 
+              (kode_booking, nama_pemesan, email, no_hp, tanggal, jumlah_dewasa, jumlah_anak, total_harga, status_pembayaran) 
               VALUES 
               ('$kode_booking', '$nama', '$email', '$no_hp', '$tanggal', '$tiket_dewasa', '$tiket_anak', '$total_bayar', 'pending')";
 
