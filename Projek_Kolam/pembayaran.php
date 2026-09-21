@@ -1,12 +1,12 @@
 <?php
-require_once 'config/database.php';
+require_once "config/database.php";
 
 $kode = isset($_GET['kode']) ? mysqli_real_escape_string($conn, $_GET['kode']) : '';
 $query = "SELECT * FROM tiket_pesanan WHERE kode_booking = '$kode'";
 $result = $conn->query($query);
 
 if ($result->num_rows === 0) {
-    echo "<div class='container'><p>Pesanan tidak ditemukan.</p></div>";
+    echo "<div style='text-align:center; margin-top:50px;'><h3>Pesanan tidak ditemukan.</h3><a href='index.php'>Kembali ke Beranda</a></div>";
     exit;
 }
 
@@ -19,40 +19,136 @@ if (isset($_POST['konfirmasi_bayar'])) {
     exit;
 }
 ?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran Tiket - Tirta Firdaus</title>
+    <!-- File CSS Utama agar Header & Navigasi Sama Persis -->
+    <link rel="stylesheet" href="style.css">
 
-<div class="container">
-    <h2>Pilih Metode Pembayaran</h2>
-    <p>Kode Booking: <strong><?php echo $tiket['kode_booking']; ?></strong></p>
-    <p>Total tagihan yang harus dibayar: <strong style="color: var(--primary); font-size: 1.2rem;">Rp <?= number_format($tiket['total_bayar'], 0, ',', '.'); ?></strong></p>
-    <form method="POST">
-        <div class="form-group">
-    <label style="margin-bottom: 0.8rem; display: block;">Metode Pembayaran Digital:</label>
-    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-        
-        <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal; cursor: pointer;">
-            <input type="radio" name="metode" value="qris" checked style="width: auto; margin: 0;">
-            <span><strong>QRIS</strong> (GoPay, OVO, Dana, LinkAja, ShopeePay)</span>
-        </label>
+    <!-- CSS Khusus Tampilan Kotak Pembayaran -->
+    <style>
+        .payment-container {
+            max-width: 650px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
 
-        <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal; cursor: pointer;">
-            <input type="radio" name="metode" value="bca" style="width: auto; margin: 0;">
-            <span><strong>Virtual Account BCA</strong></span>
-        </label>
+        .payment-container h2 {
+            margin-top: 0;
+            color: #0077b6;
+            font-size: 24px;
+            text-align: center;
+        }
 
-        <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: normal; cursor: pointer;">
-            <input type="radio" name="metode" value="mandiri" style="width: auto; margin: 0;">
-            <span><strong>Virtual Account Mandiri</strong></span>
-        </label>
+        .booking-info {
+            background-color: #f4f8fb;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
 
+        .booking-info p {
+            margin: 6px 0;
+            font-size: 15px;
+        }
+
+        .qr-box {
+            background-color: #f8f9fa;
+            border: 1px dashed #0077b6;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .qr-box img {
+            width: 180px;
+            height: 180px;
+            margin-top: 10px;
+        }
+
+        .payment-options {
+            margin: 15px 0;
+        }
+
+        .payment-options label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-confirm {
+            width: 100%;
+            background-color: #00b4d8;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-confirm:hover {
+            background-color: #0077b6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        Tirta Firdaus
     </div>
-</div>
+    <nav>
+        <a href="index.php">Beranda</a>
+        <a href="index.php#galeri">Galeri</a>
+        <a href="booking.php" class="btn">Pesan Tiket</a>
+    </nav>
+</header>
 
-        <div style="background: #f1f5f9; padding: 1rem; border-radius: 8px; text-align: center; margin: 1.5rem 0;">
-            <p style="margin: 0 0 10px 0; font-size: 0.9rem; color: #475569;">Scan QRIS di bawah ini untuk membayar:</p>
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=PAY-<?php echo $tiket['kode_booking']; ?>" alt="QRIS Payment">
+<div class="payment-container">
+    <h2>Pilih Metode Pembayaran</h2>
+
+    <div class="booking-info">
+        <p><strong>Kode Booking:</strong> <?= $tiket['kode_booking']; ?></p>
+        <p><strong>Total tagihan yang harus dibayar:</strong> <span style="color: #0077b6; font-size: 1.2rem; font-weight: bold;">Rp <?= number_format($tiket['total_bayar'], 0, ',', '.'); ?></span></p>
+    </div>
+
+    <form method="POST">
+        <p><strong>Metode Pembayaran Digital:</strong></p>
+        <div class="payment-options">
+            <label>
+                <input type="radio" name="metode" value="qris" checked>
+                <span><strong>QRIS</strong> (GoPay, OVO, Dana, LinkAja, ShopeePay)</span>
+            </label>
+            <label>
+                <input type="radio" name="metode" value="bca">
+                <span><strong>Virtual Account BCA</strong></span>
+            </label>
+            <label>
+                <input type="radio" name="metode" value="mandiri">
+                <span><strong>Virtual Account Mandiri</strong></span>
+            </label>
         </div>
 
-        <button type="submit" name="konfirmasi_bayar" class="btn" style="width: 100%;">Saya Sudah Bayar (Konfirmasi)</button>
+        <div class="qr-box">
+            <p style="margin:0; font-size:13px; color:#555;">Scan QRIS di bawah ini untuk membayar:</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=<?= $tiket['kode_booking']; ?>" alt="QR Code Pembayaran">
+        </div>
+
+        <button type="submit" name="konfirmasi_bayar" class="btn-confirm">Saya Sudah Bayar (Konfirmasi)</button>
     </form>
 </div>
 
