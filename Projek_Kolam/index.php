@@ -104,8 +104,8 @@
     
         <div class="galeri-container">
             <div class="galeri-item">
-                <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=500&q=80" alt="Kolam Renang Utama">
-                <div class="galeri-caption">Kolam Renang Utama</div>
+                <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=500&q=80" alt="Gazebo">
+                <div class="galeri-caption">Gazebo</div>
                 </div>
 
                 <div class="galeri-item">
@@ -114,7 +114,7 @@
                 </div>
 
                 <div class="galeri-item">
-                <img src="..
+                <img src="assets/kolam1.jpeg">
                 <div class="galeri-caption">Kolam Dewasa</div>
             </div>
         </div>
