@@ -1,6 +1,5 @@
 <?php
 require_once 'config/database.php';
-include 'includes/header.php';
 
 $kode = isset($_GET['kode']) ? mysqli_real_escape_string($conn, $_GET['kode']) : '';
 $query = "SELECT * FROM tiket_pesanan WHERE kode_booking = '$kode'";
@@ -24,9 +23,7 @@ if (isset($_POST['konfirmasi_bayar'])) {
 <div class="container">
     <h2>Pilih Metode Pembayaran</h2>
     <p>Kode Booking: <strong><?php echo $tiket['kode_booking']; ?></strong></p>
-    <p>Total tagihan yang harus dibayar: <strong style="color: var(--primary); font-size: 1.2rem;">Rp <?php echo number_format($tiket['total_bayar'], 0, ',', '.'); ?></strong></p>
-    <hr>
-
+    <p>Total tagihan yang harus dibayar: <strong style="color: var(--primary); font-size: 1.2rem;">Rp <?= number_format($tiket['total_bayar'], 0, ',', '.'); ?></strong></p>
     <form method="POST">
         <div class="form-group">
     <label style="margin-bottom: 0.8rem; display: block;">Metode Pembayaran Digital:</label>
