@@ -104,8 +104,13 @@
     
         <div class="galeri-container">
             <div class="galeri-item">
+<<<<<<< HEAD
                 <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=500&q=80" alt="Gazebo">
                 <div class="galeri-caption">Gazebo</div>
+=======
+                <img src="assets/kolam1.jpeg" alt="Kolam Renang Utama">
+                <div class="galeri-caption">Kolam Renang Utama</div>
+>>>>>>> 533ecc328ca1736eb07c4e9647d008dd179f8fb0
                 </div>
 
                 <div class="galeri-item">
@@ -114,8 +119,13 @@
                 </div>
 
                 <div class="galeri-item">
+<<<<<<< HEAD
                 <img src="assets/kolam1.jpeg">
                 <div class="galeri-caption">Kolam Dewasa</div>
+=======
+                <img src="https://images.unsplash.com/photo-1582650625119-3a31f8418b0d?auto=format&fit=crop&w=500&q=80" alt="Pemandangan Depan">
+                <div class="galeri-caption">Area Bersantai</div>
+>>>>>>> 533ecc328ca1736eb07c4e9647d008dd179f8fb0
             </div>
         </div>
     </section>
