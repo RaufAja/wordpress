@@ -23,8 +23,7 @@ if (isset($_POST['konfirmasi_bayar'])) {
 <div class="container">
     <h2>Pilih Metode Pembayaran</h2>
     <p>Kode Booking: <strong><?php echo $tiket['kode_booking']; ?></strong></p>
-    <p>Total tagihan yang harus dibayar: <strong style="color: var(--primary); font-size: 1.2rem;">Rp <?= number_format($tiket['total_harga'], 0, ',', '.'); ?></strong></p>    <hr>
-
+    <p>Total tagihan yang harus dibayar: <strong style="color: var(--primary); font-size: 1.2rem;">Rp <?= number_format($tiket['total_bayar'], 0, ',', '.'); ?></strong></p>
     <form method="POST">
         <div class="form-group">
     <label style="margin-bottom: 0.8rem; display: block;">Metode Pembayaran Digital:</label>
