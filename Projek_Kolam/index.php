@@ -114,8 +114,8 @@
                 </div>
 
                 <div class="galeri-item">
-                <img src="https://images.unsplash.com/photo-1582650625119-3a31f8418b0d?auto=format&fit=crop&w=500&q=80" alt="Pemandangan Depan">
-                <div class="galeri-caption">Area Bersantai</div>
+                <img src="..
+                <div class="galeri-caption">Kolam Dewasa</div>
             </div>
         </div>
     </section>
