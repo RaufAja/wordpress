@@ -18,6 +18,7 @@
     <a href="#tentang">Tentang kami</a>
     <a href="#galeri">Galeri</a>
     <a href="booking.php" class="btn">Pesan Tiket Sekarang</a>
+    <a href="login.php" style="font-size: 13px; opacity: 0.8; margin-left: 10px;">Login Operator</a>
 </nav>
     </header>
 
