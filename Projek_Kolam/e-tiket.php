@@ -29,6 +29,7 @@ $tiket = $result->fetch_assoc();
     <nav>
         <a href="index.php">Beranda</a>
         <a href="index.php#galeri">Galeri</a>
+        <a href="index.php#tentang">Tentang kami</a>
         <a href="booking.php" class="btn">Pesan Tiket</a>
     </nav>
 </header>
